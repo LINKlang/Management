@@ -36,7 +36,7 @@ async def add_identitygroup(ctx, group_id: str):
     # print(ctx.guild.owner)
     if not is_supporter(ctx):
         # print(ctx)
-        await ctx.respond("对不起，您没有权限执行该命令。")
+        await ctx.respond("对不起，您没有权限执行该命令。", ephemeral=True)
         return
     # 使用正则表达式提取19位数字
     match = re.search(r'<@&(\d{19})>', group_id)
@@ -83,7 +83,7 @@ async def delete_channel(ctx, regex: str):
     print(f"参数：{regex}")
     if not is_supporter(ctx):
         # print(ctx)
-        await ctx.respond("对不起，您没有权限执行该命令。")
+        await ctx.respond("对不起，您没有权限执行该命令。", ephemeral=True)
         return
     # 遍历服务器中的所有文本频道
     for channel in ctx.guild.text_channels:
