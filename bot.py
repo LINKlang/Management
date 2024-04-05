@@ -85,6 +85,7 @@ async def delete_channel(ctx, regex: str):
         # print(ctx)
         await ctx.respond("对不起，您没有权限执行该命令。", ephemeral=True)
         return
+    await ctx.respond("正在删除频道...",ephemeral=True)
     # 遍历服务器中的所有文本频道
     for channel in ctx.guild.text_channels:
         # 如果频道名称匹配正则表达式
